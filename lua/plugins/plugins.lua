@@ -187,7 +187,10 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "java-debug-adapter",
+        "java-test",
       },
     },
   },
+  { "chaitanyabsprip/present.nvim" },
 }
