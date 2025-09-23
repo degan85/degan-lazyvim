@@ -39,3 +39,7 @@ vim.opt.mouse = ""
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+-- API 키 직접 설정 (보안상 권장하지 않음)
+vim.env.ANTHROPIC_API_KEY =
+  "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"

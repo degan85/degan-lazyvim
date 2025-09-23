@@ -193,4 +193,11 @@ return {
     },
   },
   { "chaitanyabsprip/present.nvim" },
+  {
+    "mrcjkb/rustaceanvim",
+    opts = {
+      rocks = { opt = true }, -- 테이블 형태로 수정
+      -- 또는 rocks 설정을 아예 제거
+    },
+  },
 }
