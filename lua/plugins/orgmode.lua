@@ -83,23 +83,8 @@ return {
       },
     })
   end,
-  dependencies = {
-    {
-      "nvim-treesitter/nvim-treesitter",
-      opts = function(_, opts)
-        if type(opts.ensure_installed) == "table" then
-          vim.list_extend(opts.ensure_installed, { "org" })
-        else
-          opts.ensure_installed = { "org" }
-        end
-
-        opts.highlight = opts.highlight or { enable = true }
-        if opts.highlight then
-          opts.highlight.additional_vim_regex_highlighting = { "org" }
-        end
-
-        return opts
-      end,
-    },
-  },
+  -- treesitter 의존성 블록 제거:
+  -- 1) `org` 파서는 nvim-orgmode 가 자체 번들/설치하므로 ensure_installed 불필요.
+  --    nvim-treesitter main 브랜치 레지스트리엔 `org` 가 없어 경고만 발생했음.
+  -- 2) `opts.highlight` 는 treesitter master 브랜치 전용 옵션으로 main 에선 무시됨.
 }

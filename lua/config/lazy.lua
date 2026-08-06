@@ -11,30 +11,14 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
-    { import = "lazyvim.plugins.extras.lang.java" },
-    { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.ui.edgy" },
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
-    { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.lang.yaml" },
-    -- { import = "lazyvim.plugins.extras.coding.copilot" },
-    -- { import = "lazyvim.plugins.extras.coding.copilot-chat" },
-    -- { import = "lazyvim.plugins.extras.coding.codeium" },
-    -- { import = "lazyvim.plugins.extras.coding.tabnine" },
-    { import = "lazyvim.plugins.extras.ui.alpha" },
-    { import = "lazyvim.plugins.extras.lsp.none-ls" },
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.lang.sql" },
-    -- refactoring.nvim 2.0 은 Neovim 0.12+ 필수 (LazyVim v16 기준).
-    -- 현재 0.11.2 라 비활성화 — nvim 0.12 로 올린 뒤 주석 해제하세요.
-    -- { import = "lazyvim.plugins.extras.editor.refactoring" },
+    -- extras 는 lazyvim.json 에서 관리합니다 (`:LazyExtras` 로 켜고 끄기).
+    -- 예전엔 여기에 직접 import 했지만, 두 곳에 나뉘어 있으면
+    -- `:LazyExtras` UI 와 실제 상태가 어긋나 관리가 어려워집니다.
+    --
+    -- 비활성 상태인 extras (참고용):
+    --   editor.refactoring  -- refactoring.nvim 2.0 이 Neovim 0.12+ 필수 (현재 0.11.2)
+    --   coding.copilot / coding.copilot-chat / coding.codeium / coding.tabnine
+
     -- import/override with your plugins
     { import = "plugins" },
   },

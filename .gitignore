@@ -6,3 +6,15 @@ debug
 foo.*
 *.log
 data
+
+# 바이너리 배포본 (설치용으로 받아둔 것, 저장소에 커밋 금지)
+*.tar.gz
+*.tar.xz
+*.zip
+
+# 비활성 설정 파일
+*.backup
+*.disabled
+
+# 스크래치/테스트 파일
+test.*
