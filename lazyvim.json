@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.lang.vue",
     "lazyvim.plugins.extras.util.dot"
   ],
   "news": {

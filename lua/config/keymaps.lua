@@ -18,22 +18,20 @@ vim.keymap.set("n", "<C-S-j>", "<C-w>-")
 vim.keymap.set("n", "<C-S-k>", "<C-w>+")
 vim.keymap.set("n", "<C-S-l>", "<C-w>>")
 
--- Hop 설정 (안전하게)
-local ok, hop = pcall(require, "hop")
-if ok then
-  local directions = require("hop.hint").HintDirection
+-- Hop 설정
+-- f/F/t/T 는 flash.nvim + vim 기본 동작(dt, 등)에 양보하고 <leader>h 프리픽스를 사용합니다.
+vim.keymap.set({ "n", "x", "o" }, "<leader>hc", function()
+  require("hop").hint_char1({ current_line_only = false })
+end, { desc = "Hop: 문자 1개" })
 
-  vim.keymap.set("", "f", function()
-    hop.hint_char1({ current_line_only = false })
-  end, { remap = true })
+vim.keymap.set({ "n", "x", "o" }, "<leader>ha", function()
+  require("hop").hint_anywhere()
+end, { desc = "Hop: 아무 위치" })
 
-  vim.keymap.set("", "F", function()
-    hop.hint_anywhere() -- 수정됨: 불필요한 ({}) 제거
-  end, { remap = true })
+vim.keymap.set({ "n", "x", "o" }, "<leader>hp", function()
+  require("hop").hint_patterns()
+end, { desc = "Hop: 패턴" })
 
-  vim.keymap.set("", "t", function()
-    hop.hint_patterns() -- 수정됨: ()({}) → ()
-  end, { remap = true })
-else
-  vim.notify("Hop plugin not found. Please install it first.", vim.log.levels.WARN)
-end
+vim.keymap.set({ "n", "x", "o" }, "<leader>hw", function()
+  require("hop").hint_words()
+end, { desc = "Hop: 단어" })

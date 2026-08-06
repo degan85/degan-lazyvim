@@ -19,7 +19,7 @@ vim.opt.hlsearch = true
 vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 0
-vim.opt.laststatus = 0
+vim.opt.laststatus = 3 -- global statusline (lualine 표시). 숨기려면 0
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.inccommand = "split"
@@ -39,3 +39,6 @@ vim.opt.mouse = ""
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+-- API 키는 셸 환경변수로 관리합니다 (~/.zshrc 의 export ANTHROPIC_API_KEY=...)
+-- 설정 파일에 직접 넣으면 git 히스토리에 영구히 남습니다.

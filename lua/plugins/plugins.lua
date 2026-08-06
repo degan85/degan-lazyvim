@@ -72,6 +72,22 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        -- markdownlint 비활성화
+        marksman = {}, -- marksman은 유지 (코드 네비게이션용)
+      },
+      -- markdownlint 자동 설치 방지
+      setup = {
+        markdownlint = function()
+          return true -- 설정 건너뛰기
+        end,
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        markdown = {}, -- 빈 배열 = markdownlint 비활성화
       },
     },
   },
