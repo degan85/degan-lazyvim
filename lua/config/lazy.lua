@@ -32,7 +32,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.sql" },
-    { import = "lazyvim.plugins.extras.editor.refactoring" },
+    -- refactoring.nvim 2.0 은 Neovim 0.12+ 필수 (LazyVim v16 기준).
+    -- 현재 0.11.2 라 비활성화 — nvim 0.12 로 올린 뒤 주석 해제하세요.
+    -- { import = "lazyvim.plugins.extras.editor.refactoring" },
     -- import/override with your plugins
     { import = "plugins" },
   },
